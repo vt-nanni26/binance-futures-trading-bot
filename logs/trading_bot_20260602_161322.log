@@ -1,0 +1,23 @@
+2026-06-02 16:13:22 - TradingBot - INFO - Placing LIMIT order: SELL 0.001 BTCUSDT @ 100000.0
+2026-06-02 16:13:22 - TradingBot - INFO - Placing LIMIT order: SELL 0.001 BTCUSDT @ 100000.0
+2026-06-02 16:13:22 - TradingBot - INFO - ==================================================
+ORDER REQUEST SUMMARY
+==================================================
+Symbol:        BTCUSDT
+Side:          SELL
+Type:          LIMIT
+Quantity:      0.001
+Price:         100000.0
+Time In Force: GTC
+==================================================
+2026-06-02 16:13:23 - TradingBot - INFO - 
+==================================================
+ORDER RESPONSE
+==================================================
+🟡 Status:        NEW
+📝 Order ID:     13802230127
+📊 Executed Qty: 0.0000 / 0.0010 (0.0%)
+
+🟡 PENDING: Order accepted and awaiting execution
+==================================================
+2026-06-02 16:13:23 - TradingBot - INFO - Order processing completed

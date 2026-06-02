@@ -1,0 +1,21 @@
+2026-06-02 16:15:05 - TradingBot - INFO - Placing MARKET order: BUY 0.001 BTCUSDT
+2026-06-02 16:15:05 - TradingBot - INFO - Placing MARKET order: BUY 0.001 BTCUSDT
+2026-06-02 16:15:05 - TradingBot - INFO - ==================================================
+ORDER REQUEST SUMMARY
+==================================================
+Symbol:        BTCUSDT
+Side:          BUY
+Type:          MARKET
+Quantity:      0.001
+==================================================
+2026-06-02 16:15:06 - TradingBot - INFO - 
+==================================================
+ORDER RESPONSE
+==================================================
+🟡 Status:        NEW
+📝 Order ID:     13802391137
+📊 Executed Qty: 0.0000 / 0.0010 (0.0%)
+
+🟡 PENDING: Order accepted and awaiting execution
+==================================================
+2026-06-02 16:15:06 - TradingBot - INFO - Order processing completed

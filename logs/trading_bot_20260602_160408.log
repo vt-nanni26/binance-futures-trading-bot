@@ -1,0 +1,49 @@
+2026-06-02 16:04:08 - TradingBot - INFO - Placing LIMIT order: SELL 0.001 BTCUSDT @ 100000.0
+2026-06-02 16:04:08 - TradingBot - INFO - Placing LIMIT order: SELL 0.001 BTCUSDT @ 100000.0
+2026-06-02 16:04:08 - TradingBot - INFO - ==================================================
+ORDER REQUEST SUMMARY
+==================================================
+Symbol:        BTCUSDT
+Side:          SELL
+Type:          LIMIT
+Quantity:      0.001
+Price:         100000.0
+Time In Force: GTC
+==================================================
+2026-06-02 16:04:11 - TradingBot - ERROR - Order failed: HTTP error: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=SELL&type=LIMIT&quantity=0.001&price=100000.0&timeInForce=GTC&timestamp=1780396448192&signature=303f5c607d87482ddfd9b9ac8652779e2481a0056fefd5fdad42bb7686cc89f0
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\GitHub\assessment\trading_bot\bot\client.py", line 107, in _make_request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Admin\Desktop\GitHub\assessment\venv\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=SELL&type=LIMIT&quantity=0.001&price=100000.0&timeInForce=GTC&timestamp=1780396448192&signature=303f5c607d87482ddfd9b9ac8652779e2481a0056fefd5fdad42bb7686cc89f0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\GitHub\assessment\trading_bot\bot\client.py", line 119, in _make_request
+    raise Exception(f"Binance API error: {error_msg}")
+Exception: Binance API error: Timestamp for this request is outside of the recvWindow.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\GitHub\assessment\trading_bot\cli.py", line 200, in main
+    response = order_manager.place_limit_order(
+        symbol=args.symbol,
+    ...<2 lines>...
+        price=args.price
+    )
+  File "C:\Users\Admin\Desktop\GitHub\assessment\trading_bot\bot\orders.py", line 195, in place_limit_order
+    response = self.client.place_order(
+        symbol=symbol,
+    ...<4 lines>...
+        time_in_force=time_in_force
+    )
+  File "C:\Users\Admin\Desktop\GitHub\assessment\trading_bot\bot\client.py", line 188, in place_order
+    return self._make_request('POST', endpoint, params)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\GitHub\assessment\trading_bot\bot\client.py", line 121, in _make_request
+    raise Exception(f"HTTP error: {str(e)}")
+Exception: HTTP error: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=SELL&type=LIMIT&quantity=0.001&price=100000.0&timeInForce=GTC&timestamp=1780396448192&signature=303f5c607d87482ddfd9b9ac8652779e2481a0056fefd5fdad42bb7686cc89f0

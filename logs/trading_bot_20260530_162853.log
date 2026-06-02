@@ -1,0 +1,47 @@
+2026-05-30 16:28:53 - TradingBot - INFO - Placing MARKET order: BUY 0.001 BTCUSDT
+2026-05-30 16:28:53 - TradingBot - INFO - Placing MARKET order: BUY 0.001 BTCUSDT
+2026-05-30 16:28:53 - TradingBot - INFO - ==================================================
+ORDER REQUEST SUMMARY
+==================================================
+Symbol:        BTCUSDT
+Side:          BUY
+Type:          MARKET
+Quantity:      0.001
+==================================================
+2026-05-30 16:28:55 - TradingBot - ERROR - Order failed: HTTP error: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&timestamp=1780138733692&signature=4fd22d74db8a53381bfff9c2cd0f32e7d92a8f1e85d6be032186c0b8b65f1bd6
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\GitHub\assessment\trading_bot\bot\client.py", line 104, in _make_request
+    response.raise_for_status()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Admin\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&timestamp=1780138733692&signature=4fd22d74db8a53381bfff9c2cd0f32e7d92a8f1e85d6be032186c0b8b65f1bd6
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\GitHub\assessment\trading_bot\bot\client.py", line 116, in _make_request
+    raise Exception(f"Binance API error: {error_msg}")
+Exception: Binance API error: Timestamp for this request is outside of the recvWindow.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\GitHub\assessment\trading_bot\cli.py", line 189, in main
+    response = order_manager.place_market_order(
+        symbol=args.symbol,
+        side=args.side,
+        quantity=args.quantity
+    )
+  File "C:\Users\Admin\Desktop\GitHub\assessment\trading_bot\bot\orders.py", line 147, in place_market_order
+    response = self.client.place_order(
+        symbol=symbol,
+    ...<2 lines>...
+        quantity=quantity
+    )
+  File "C:\Users\Admin\Desktop\GitHub\assessment\trading_bot\bot\client.py", line 185, in place_order
+    return self._make_request('POST', endpoint, params)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\Desktop\GitHub\assessment\trading_bot\bot\client.py", line 118, in _make_request
+    raise Exception(f"HTTP error: {str(e)}")
+Exception: HTTP error: 400 Client Error: Bad Request for url: https://testnet.binancefuture.com/fapi/v1/order?symbol=BTCUSDT&side=BUY&type=MARKET&quantity=0.001&timestamp=1780138733692&signature=4fd22d74db8a53381bfff9c2cd0f32e7d92a8f1e85d6be032186c0b8b65f1bd6
